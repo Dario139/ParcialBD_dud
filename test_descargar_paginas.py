@@ -11,5 +11,5 @@ def test_get_url_tiempo():
     assert get_url_tiempo() == "https://www.eltiempo.com/"
 
 
-def test_get_url_publimetro():
-    assert get_url_publimetro() == "https://www.elespectador.com/"
+def test_get_url_elespectador():
+    assert get_url_elespectador() == "https://www.elespectador.com/"
