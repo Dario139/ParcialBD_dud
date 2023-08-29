@@ -51,9 +51,9 @@ jobs:
           flake8 descargar_paginas.py
           flake8 extraer_datos.py
       
-      - name: pytest
+      - name: pruebas unitarias
         run: |
-          pytest tes_descargar_paginas.py
+          pytest test_descargar_paginas.py
           
       - name: listarS3
         run: |
