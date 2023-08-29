@@ -11,7 +11,7 @@ def functionL():
     obj_tiempo = s3.Object(bucket_name,
                            f'headlines/final/eltiempo-{nombre}.html')
     body_tiempo = obj_tiempo.get()['Body'].read()
-    obj_elespectador = s3.Object(bucket_name, 
+    obj_elespectador = s3.Object(bucket_name,
                                  f'headlines/final/elespectador-{nombre}.html')
     body_elespectador = obj_elespectador.get()['Body'].read()
 
@@ -25,7 +25,7 @@ def functionL():
     csv_elespectador = []
 
     for article in data_noticias_tiempo:
-        link = "eltiempo.com" + article.find('a', 
+        link = "eltiempo.com" + article.find('a',
                                              class_='title page-link')['href']
         name = article['data-name'].replace(",", "")
         category = article['data-seccion']
@@ -54,5 +54,4 @@ def functionL():
         Key=f'''headlines/final/periodico=elespectador/year={nombre[:4]}/
                 month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv'''
     )
-
 functionL()
