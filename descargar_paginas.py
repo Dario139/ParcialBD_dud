@@ -7,7 +7,7 @@ def get_url_tiempo():
     return "https://www.eltiempo.com/"
 
 
-def get_url_publimetro():
+def get_url_elespectador():
     return "https://www.elespectador.com/"
 
 
