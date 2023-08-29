@@ -53,7 +53,7 @@ jobs:
       
       - name: pruebas unitarias
         run: |
-          pytest test_descargar_paginas.py
+          pytest
           
       - name: listarS3
         run: |
