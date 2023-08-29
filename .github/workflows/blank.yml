@@ -53,7 +53,6 @@ jobs:
       
       - name: pytest
         run: |
-          source env/bin/activate
           pytest tes_descargar_paginas.py
           
       - name: listarS3
