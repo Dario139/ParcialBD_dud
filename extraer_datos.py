@@ -2,6 +2,7 @@ import boto3
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+
 def functionL():
     nombre = datetime.today().strftime('%Y-%m-%d')
     s3 = boto3.resource('s3')
@@ -45,5 +46,6 @@ def functionL():
     s3_client.put_object(Body=csv_elespectador_content,
                          Bucket=bucket_name,
                          Key=f'headlines/final/periodico=elespectador/year={nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
+
 
 functionL()
