@@ -50,6 +50,12 @@ jobs:
           source env/bin/activate
           flake8 descargar_paginas.py
           flake8 extraer_datos.py
+      
+      - name: pytest
+        run: |
+          source env/bin/activate
+          pytest descargar_paginas.py
+          pytest extraer_datos.py
           
       - name: listarS3
         run: |
