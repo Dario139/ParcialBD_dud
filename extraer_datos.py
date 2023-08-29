@@ -8,8 +8,8 @@ def functionL():
     s3 = boto3.resource('s3')
     bucket_name = 'parcialbigdatacorte1'
 
-    obj_tiempo = s3.Object(bucket_name, 
-                           f'headlines/final/eltiempo-{nombre}.html')
+    obj_tiempo = s3.Object(bucket_name, \
+        f'headlines/final/eltiempo-{nombre}.html')
     body_tiempo = obj_tiempo.get()['Body'].read()
     obj_elespectador = s3.Object(bucket_name, f'headlines/final/elespectador-{nombre}.html')
     body_elespectador = obj_elespectador.get()['Body'].read()
