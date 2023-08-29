@@ -10,7 +10,7 @@
         "runtime": "python3.8",
         "s3_bucket": "parcialbigdatacorte1",
         "events": [{
-           "function": "descargar.f", // The function to execute
+           "function": "descargar.funtionL", // The function to execute
            "expression": "cron(00 09 * * ? *)" // When to execute it (in cron or rate format)
        }]
     },
@@ -26,7 +26,7 @@
         "runtime": "python3.8",
         "s3_bucket": "casas-fina-20020503",
         "events": [{
-            "function": "extraer.f",
+            "function": "extraer.funtionL",
             "event_source": {
                   "arn":  "arn:aws:s3:::parcialbigdatacorte1",
                   "events": [
