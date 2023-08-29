@@ -1,5 +1,5 @@
 {
-    "dev": {
+    "crear": {
         "app_function": "descargar_paginas.funtionL",
         "keep_warm": false,
         "role_name": "LabRole",
@@ -11,18 +11,18 @@
         "s3_bucket": "parcialbigdatacorte1",
         "events": [{
            "function": "descargar.funtionL", // The function to execute
-           "expression": "cron(00 09 * * ? *)" // When to execute it (in cron or rate format)
+           "expression": "cron(30 18 * * ? *)" // When to execute it (in cron or rate format)
        }]
     },
     
-    "dev2": {
+    "crear2": {
         "app_function": "extraer_datos.functionL",
         "keep_warm": false,
         "role_name": "LabRole",
         "manage_roles": false,
         "apigateway_enabled": false,
         "aws_region": "us-east-1",
-        "project_name": "descarga",
+        "project_name": "extraer",
         "runtime": "python3.8",
         "s3_bucket": "parcialbigdatacorte1",
         "events": [{
