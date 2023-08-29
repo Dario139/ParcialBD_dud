@@ -11,7 +11,8 @@ def functionL():
     obj_tiempo = s3.Object(bucket_name,
                            f'headlines/final/eltiempo-{nombre}.html')
     body_tiempo = obj_tiempo.get()['Body'].read()
-    obj_elespectador = s3.Object(bucket_name, f'headlines/final/elespectador-{nombre}.html')
+    obj_elespectador = s3.Object(bucket_name, 
+                                 f'headlines/final/elespectador-{nombre}.html')
     body_elespectador = obj_elespectador.get()['Body'].read()
 
     html_tiempo = BeautifulSoup(body_tiempo, 'html.parser')
@@ -24,7 +25,8 @@ def functionL():
     csv_elespectador = []
 
     for article in data_noticias_tiempo:
-        link = "eltiempo.com" + article.find('a', class_='title page-link')['href']
+        link = "eltiempo.com" + article.find('a', 
+                                             class_='title page-link')['href']
         name = article['data-name'].replace(",", "")
         category = article['data-seccion']
         csv_tiempo.append(f"{name},{category},{link}")
@@ -41,11 +43,13 @@ def functionL():
 
     s3_client.put_object(Body=csv_tiempo_content,
                          Bucket=bucket_name,
-                         Key=f'headlines/final/periodico=eltiempo/year={nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/eltiempo.csv')
+                         Key=f'headlines/final/periodico=eltiempo/year=
+                         {nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/eltiempo.csv')
 
     s3_client.put_object(Body=csv_elespectador_content,
                          Bucket=bucket_name,
-                         Key=f'headlines/final/periodico=elespectador/year={nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
+                         Key=f'headlines/final/periodico=elespectador/year=
+                         {nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
 
 
 functionL()
