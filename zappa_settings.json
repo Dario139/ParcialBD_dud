@@ -1,0 +1,39 @@
+{
+    "dev": {
+        "app_function": "descargar_paginas.f",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "aws_region": "us-east-1",
+        "project_name": "descarga",
+        "runtime": "python3.8",
+        "s3_bucket": "parcialbigdatacorte1",
+        "events": [{
+           "function": "descargar.f", // The function to execute
+           "expression": "cron(00 09 * * ? *)" // When to execute it (in cron or rate format)
+       }]
+    },
+    
+    "dev2": {
+        "app_function": "extraer_datos.functionL",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "aws_region": "us-east-1",
+        "project_name": "descarga",
+        "runtime": "python3.8",
+        "s3_bucket": "casas-fina-20020503",
+        "events": [{
+            "function": "extraer.f",
+            "event_source": {
+                  "arn":  "arn:aws:s3:::parcialbigdatacorte1",
+                  "events": [
+                    "s3:ObjectCreated:*" 
+                  ]
+               }
+            }]
+    }
+    
+}
