@@ -41,15 +41,17 @@ def functionL():
     csv_tiempo_content = linea_0 + '\n'.join(csv_tiempo)
     csv_elespectador_content = linea_0 + '\n'.join(csv_elespectador)
 
-    s3_client.put_object(Body=csv_tiempo_content,
-                         Bucket=bucket_name,
-                         Key=f'headlines/final/periodico=eltiempo/year=
-                         {nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/eltiempo.csv')
+    s3_client.put_object(
+        Body=csv_tiempo_content,
+        Bucket=bucket_name,
+        Key=f'''headlines/final/periodico=eltiempo/year={nombre[:4]}/
+                month={nombre[5:7]}/day={nombre[8:]}/eltiempo.csv'''
+    )
 
-    s3_client.put_object(Body=csv_elespectador_content,
-                         Bucket=bucket_name,
-                         Key=f'headlines/final/periodico=elespectador/year=
-                         {nombre[:4]}/month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
-
+    s3_client.put_object(
+        Body=csv_elespectador_content,
+        Bucket=bucket_name,
+        Key=f'headlines/final/periodico=elespectador/year={nombre[:4]}/
+        month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
 
 functionL()
