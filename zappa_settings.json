@@ -10,8 +10,8 @@
         "runtime": "python3.8",
         "s3_bucket": "parcialbigdatacorte1",
         "events": [{
-           "function": "descargar.funtionL", // The function to execute
-           "expression": "cron(30 18 * * ? *)" // When to execute it (in cron or rate format)
+           "function": "descargar.funtionL",
+           "expression": "cron(30 18 * * ? *)"
        }]
     },
     
