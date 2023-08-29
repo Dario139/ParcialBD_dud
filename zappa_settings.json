@@ -1,6 +1,6 @@
 {
     "dev": {
-        "app_function": "descargar_paginas.f",
+        "app_function": "descargar_paginas.funtionL",
         "keep_warm": false,
         "role_name": "LabRole",
         "manage_roles": false,
@@ -24,7 +24,7 @@
         "aws_region": "us-east-1",
         "project_name": "descarga",
         "runtime": "python3.8",
-        "s3_bucket": "casas-fina-20020503",
+        "s3_bucket": "parcialbigdatacorte1",
         "events": [{
             "function": "extraer.funtionL",
             "event_source": {
