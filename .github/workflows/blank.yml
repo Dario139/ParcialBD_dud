@@ -54,8 +54,7 @@ jobs:
       - name: pytest
         run: |
           source env/bin/activate
-          pytest descargar_paginas.py
-          pytest extraer_datos.py
+          pytest tes_descargar_paginas.py
           
       - name: listarS3
         run: |
