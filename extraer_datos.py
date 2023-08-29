@@ -51,7 +51,8 @@ def functionL():
     s3_client.put_object(
         Body=csv_elespectador_content,
         Bucket=bucket_name,
-        Key=f'headlines/final/periodico=elespectador/year={nombre[:4]}/
-        month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv')
+        Key=f'''headlines/final/periodico=elespectador/year={nombre[:4]}/
+                month={nombre[5:7]}/day={nombre[8:]}/elespectador.csv'''
+    )
 
 functionL()
