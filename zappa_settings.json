@@ -1,5 +1,5 @@
 {
-    "crear": {
+    "dev": {
         "app_function": "descargar_paginas.funtionL",
         "keep_warm": false,
         "role_name": "LabRole",
@@ -15,7 +15,7 @@
        }]
     },
     
-    "crear2": {
+    "dev2": {
         "app_function": "extraer_datos.functionL",
         "keep_warm": false,
         "role_name": "LabRole",
