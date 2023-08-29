@@ -12,4 +12,4 @@ def test_get_url_tiempo():
 
 
 def test_get_url_publimetro():
-    assert get_url_publimetro() == "https://www.elespectador.co/"
+    assert get_url_publimetro() == "https://www.elespectador.com/"
