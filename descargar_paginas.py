@@ -28,7 +28,7 @@ def get_html(url):
 def obtener_html():
     fecha_actual = get_date()
     html_tiempo = get_html(get_url_tiempo())
-    html_publimetro = get_html(get_url_publimetro())
+    html_publimetro = get_html(get_url_elespectador())
     s3 = get_boto()
     s3.put_object(Body=html_tiempo,
                   Bucket='parcialbigdatacorte1',
