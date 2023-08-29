@@ -43,6 +43,10 @@ jobs:
           flake8 descargar_paginas.py
           flake8 extraer_datos.py
           
+      - name: listarS3
+        run: |
+          aws s3api list-buckets    
+          
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -57,3 +61,4 @@ jobs:
           pytest
           zappa update dev
           zappa update dev2
+
