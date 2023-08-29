@@ -15,7 +15,6 @@ def functionL():
 
     html_tiempo = BeautifulSoup(body_tiempo, 'html.parser')
     html_elespectador = BeautifulSoup(body_elespectador, 'html.parser')
-
     data_noticias_tiempo = html_tiempo.find_all('article')
     data_noticias_elespectador = html_elespectador.find_all('article')
 
