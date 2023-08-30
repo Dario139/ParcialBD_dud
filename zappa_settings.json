@@ -15,7 +15,7 @@
        }]
     },
     
-    "dev2": {
+    "crear2": {
         "app_function": "extraer_datos.functionL",
         "keep_warm": false,
         "role_name": "LabRole",
