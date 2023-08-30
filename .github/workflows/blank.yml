@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+r# This is a basic workflow to help you get started with Actions
 
 name: CI
 
@@ -67,5 +67,5 @@ jobs:
           source env/bin/activate
           pytest
           zappa update crear
-          zappa update dev2
+          zappa update crear2
 
