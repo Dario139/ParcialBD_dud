@@ -49,7 +49,7 @@ jobs:
           pip install virtualenv
           virtualenv env
           source env/bin/activate
-          pytest tests/test_descargar_pagina.py
+          pytest test_descargar_pagina.py
       
       - name: flake8
         run: |
