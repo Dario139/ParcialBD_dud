@@ -1,0 +1,39 @@
+{
+    "dev": {
+        "app_function": "descargar_paginas.funtionL",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "aws_region": "us-east-1",
+        "project_name": "descarga",
+        "runtime": "python3.8",
+        "s3_bucket": "parcialbigdatacorte1",
+        "events": [{
+           "function": "descargar.funtionL",
+           "expression": "cron(30 18 * * ? *)"
+       }]
+    },
+    
+    "dev2": {
+        "app_function": "extraer_datos.functionL",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "aws_region": "us-east-1",
+        "project_name": "extraer",
+        "runtime": "python3.8",
+        "s3_bucket": "parcialbigdatacorte1",
+        "events": [{
+            "function": "extraer.funtionL",
+            "event_source": {
+                  "arn":  "arn:aws:s3:::parcialbigdatacorte1",
+                  "events": [
+                    "s3:ObjectCreated:*" 
+                  ]
+               }
+            }]
+    }
+    
+}
