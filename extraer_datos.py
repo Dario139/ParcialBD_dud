@@ -9,6 +9,7 @@ linea_0 = "Nombre,Categoria,Link\n"
 csv_tiempo = []
 csv_elespectador = []
 
+
 def extraer():
     obj_tiempo = s3.Object(bucket_name,
                            f'headlines/final/eltiempo-{nombre}.html')
@@ -31,7 +32,8 @@ def extraer():
 
     for article in data_noticias_elespectador:
         link = "elespectador.com" + article.find('a',
-                                             class_='Bloque_Apertura_Home_0')['href']
+                                                 class_='Bloque_Apertura_Home_0')
+                                                ['href']
         name = article.find('a').text.replace(",", "")
         category = link.split('/')[1]
         csv_elespectador.append(f"{name},{category},{link}")
