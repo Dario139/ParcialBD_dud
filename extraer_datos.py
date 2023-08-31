@@ -2,12 +2,14 @@ import boto3
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+nombre = datetime.today().strftime('%Y-%m-%d')
+s3 = boto3.resource('s3')
+bucket_name = 'parcialbigdatacorte1'
+linea_0 = "Nombre,Categoria,Link\n"
+csv_tiempo = []
+csv_elespectador = []
 
-def functionL():
-    nombre = datetime.today().strftime('%Y-%m-%d')
-    s3 = boto3.resource('s3')
-    bucket_name = 'parcialbigdatacorte1'
-
+def extraer():
     obj_tiempo = s3.Object(bucket_name,
                            f'headlines/final/eltiempo-{nombre}.html')
     body_tiempo = obj_tiempo.get()['Body'].read()
@@ -20,10 +22,6 @@ def functionL():
     data_noticias_tiempo = html_tiempo.find_all('article')
     data_noticias_elespectador = html_elespectador.find_all('article')
 
-    linea_0 = "Nombre,Categoria,Link\n"
-    csv_tiempo = []
-    csv_elespectador = []
-
     for article in data_noticias_tiempo:
         link = "eltiempo.com" + article.find('a',
                                              class_='title page-link')['href']
@@ -32,11 +30,14 @@ def functionL():
         csv_tiempo.append(f"{name},{category},{link}")
 
     for article in data_noticias_elespectador:
-        link = "elespectador.co" + article.find('a')['href']
+        link = "elespectador.com" + article.find('a',
+                                             class_='Bloque_Apertura_Home_0')['href']
         name = article.find('a').text.replace(",", "")
         category = link.split('/')[1]
         csv_elespectador.append(f"{name},{category},{link}")
 
+
+def escribir():
     s3_client = boto3.client('s3')
     csv_tiempo_content = linea_0 + '\n'.join(csv_tiempo)
     csv_elespectador_content = linea_0 + '\n'.join(csv_elespectador)
@@ -56,4 +57,5 @@ def functionL():
     )
 
 
-functionL()
+extraer()
+escribir()
