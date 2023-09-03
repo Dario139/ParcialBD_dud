@@ -1,5 +1,11 @@
 from datetime import datetime
+from urllib.request import urlopen
 
+def get_html(url):
+    with urlopen(url) as response:
+        html = response.read()
+    return html
+    
 def test_eltiempo():
     body_tiempo = get_html(get_url_tiempo())
     html_tiempo = BeautifulSoup(body_tiempo, 'html.parser')
