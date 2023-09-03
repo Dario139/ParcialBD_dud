@@ -29,7 +29,6 @@ def extraer():
 def escribir():
     s3_client = boto3.client('s3')
     csv_tiempo_content = linea_0 + '\n'.join(csv_tiempo)
-    csv_elespectador_content = linea_0 + '\n'.join(csv_elespectador)
 
     s3_client.put_object(
         Body=csv_tiempo_content,
@@ -37,6 +36,7 @@ def escribir():
         Key=f'''headlines/final/periodico=eltiempo/year={nombre[:4]}/
                 month={nombre[5:7]}/day={nombre[8:]}/eltiempo.csv'''
     )
+    
 
 extraer()
 escribir()
