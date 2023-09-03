@@ -1,6 +1,9 @@
 from datetime import datetime
 from urllib.request import urlopen
 
+def get_url_tiempo():
+    return "https://www.eltiempo.com/"
+
 def get_html(url):
     with urlopen(url) as response:
         html = response.read()
