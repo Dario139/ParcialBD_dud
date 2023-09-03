@@ -37,6 +37,8 @@ def extraer():
         name = article.find('a').text.replace(",", "")
         category = link.split('/')[1]
         csv_elespectador.append(f"{name},{category},{link}")
+        
+    return csv_tiempo, csv_elespectador
 
 
 def escribir():
