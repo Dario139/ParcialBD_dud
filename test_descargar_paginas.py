@@ -1,5 +1,6 @@
 from datetime import datetime
 from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
 def get_url_tiempo():
     return "https://www.eltiempo.com/"
