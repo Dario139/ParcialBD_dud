@@ -1,6 +1,4 @@
 from datetime import datetime
-from extraer_datos
-
 
 def test_eltiempo():
     eltiempo = extraer()
