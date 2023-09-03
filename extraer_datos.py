@@ -30,13 +30,13 @@ def extraer():
         category = article['data-seccion']
         csv_tiempo.append(f"{name},{category},{link}")
 
-    for article in data_noticias_elespectador:
-        link = "elespectador.com" + article.find('a',
-                                                 class_='Bloque_Apertura_Home_0')
-                                                ['href']
-        name = article.find('a').text.replace(",", "")
-        category = link.split('/')[1]
-        csv_elespectador.append(f"{name},{category},{link}")
+    # for article in data_noticias_elespectador:
+    #     link = "elespectador.com" + article.find('a',
+    #                                              class_='Bloque_Apertura_Home_0')
+    #                                             ['href']
+    #     name = article.find('a').text.replace(",", "")
+    #     category = link.split('/')[1]
+    #     csv_elespectador.append(f"{name},{category},{link}")
         
     return csv_tiempo, csv_elespectador
 
