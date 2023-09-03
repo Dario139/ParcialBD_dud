@@ -1,5 +1,5 @@
 from datetime import datetime
-from extraer_datos import extraer
+from extraer_datos
 
 
 def test_eltiempo():
