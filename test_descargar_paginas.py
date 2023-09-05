@@ -24,4 +24,4 @@ def test_eltiempo():
      category = article['data-seccion']
      csv_tiempo.append(f"{name},{category},{link}")
     
-    assert csv_tiempo[0] == "Durante 15 dias habra cierre en carriles del puente de la calle 127 con autonorte,Bogota,eltiempo.com/bogota/bogota-durante-15-dias-habra-cierre-en-carriles-del-puente-de-calle-127-con-autonorte-802268"
+    assert csv_tiempo[0] == "En vivo movilidad de bogota nuevos cierres por caida de material en via al llano,Bogota,eltiempo.com/bogota/via-al-llano-movilidad-en-bogota-este-5-de-septiembre-802685"
