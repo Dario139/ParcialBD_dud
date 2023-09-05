@@ -11,7 +11,7 @@ csv_tiempo = []
 
 def extraer():
     obj_tiempo = s3.Object(bucket_name,
-                           f"news/raw/eltiempo-{nombre}+".html")
+                           f"news/raw/eltiempo-{nombre}.html")
     body_tiempo = obj_tiempo.get()['Body'].read()
     html_tiempo = BeautifulSoup(body_tiempo, 'html.parser')
     data_noticias_tiempo = html_tiempo.find_all('article')
